@@ -54,10 +54,7 @@ button {
 
 .correct {
   color: green;
-}
-
-.wrong {
-  color: red;
+  background-color: #d4edda;
 }
 
 .large-feedback {
@@ -140,10 +137,9 @@ button {
   text-align: left;
 }
 
-.correct {
-  background-color: #d4edda;
-}
-
-.wrong {
-  background-color: #f8d7da;
+.shareButton,
+a {
+  color: white;
+  background-color: black;
+  text-decoration: none;
 }
