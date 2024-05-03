@@ -51,6 +51,25 @@ function App() {
           <h2>
             {score}/{quizData.length}
           </h2>
+
+          <table className="answer-table">
+            <thead>
+              <tr>
+                <td> 質問 </td>
+                <td> あなたの解答 </td>
+                <td> 結果 </td>
+              </tr>
+            </thead>
+            <tbody>
+              {answers.map((item) => (
+                <tr>
+                  <td> {item.question} </td>
+                  <td> {item.answer} </td>
+                  <td> {item.correct ? "⚪︎" : "×"} </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       ) : (
         <div className="question-section">
