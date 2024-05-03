@@ -76,7 +76,7 @@ function App() {
           {allCorrect ? (
             <button className="shareButton">
               <a
-                href="http://twitter.com/share?url=https://mini-quizapp.onrender.com/&text=みんなで一緒に！！「真実はいつもひさじゅ！！！」"
+                href="http://twitter.com/share?url=https://mini-quizapp.onrender.com/&text=全問正解！！みんなで一緒に！！「真実はいつもひさじゅ！！！」"
                 target="_blank"
                 rel="nofollow noopener noreferrer"
                 className="shareLink"
@@ -204,18 +204,38 @@ const quizData = [
   },
   {
     question:
-      "大魔王「ひさじゅ」の極大魔法「Vimハラ〜」が発動すると使えなくなるものは？",
-    options: ["Vim", "VScode", "この世の全ての通貨", "マヨネーズ"],
+      "大魔王「ひさじゅ」の極大魔法「ヴィムハラ〜」が発動すると使えなくなるものは？",
+    options: ["かめはめ波", "悪魔の実の能力", "この世の全ての通貨", "VScode"],
     correct: "VScode",
   },
   {
     question: "らんてくんの生まれはどこ？",
-    options: ["RUNTEQ教室", "渋谷", "海底遺跡", "山の中のとある研究所"],
+    options: [
+      "渋谷区のとあるRUNTEQ教室",
+      "森の中のとある実験室",
+      "海の中のとある海底遺跡",
+      "山の中のとある研究所",
+    ],
     correct: "山の中のとある研究所",
   },
   {
     question: "らんてくんの趣味は？",
-    options: ["FINAL FANTASY", "プログラミング", "飲み会", "麻雀"],
+    options: [
+      "FINAL FANTASY",
+      "マインクラフト",
+      "ドラゴンクエスト",
+      "ウイニングイレブン",
+    ],
+    correct: "FINAL FANTASY",
+  },
+  {
+    question: "らんてくんの趣味は？",
+    options: [
+      "FINAL FANTASY",
+      "マインクラフト",
+      "ドラゴンクエスト",
+      "ウイニングイレブン",
+    ],
     correct: "FINAL FANTASY",
   },
   {
