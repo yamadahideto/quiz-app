@@ -8,13 +8,14 @@ function App() {
   const [answers, setAnswers] = useState([]);
   const [score, setScore] = useState(0);
   const [feedback, setFeedback] = useState(null);
+  const [showScore, setShowScore] = useState(false);
+
   const handleAnswer = (answer) => {
     const newAnswer = {
       question: quizData[currentQuestion].question,
       answer: answer,
       correct: answer === quizData[currentQuestion].correct,
     };
-    console.log(newAnswer);
 
     // 正解していた場合
     if (newAnswer.correct) {
@@ -22,33 +23,65 @@ function App() {
       setFeedback("⚪︎");
     } else {
       //不正解の場合
-      setFeedback("⚪︎");
+      setFeedback("×");
     }
-
     setAnswers([...answers, newAnswer]);
     // 初期の空の配列にnewAnswerの配列が代入される → [{},{},{}]
     setNext(true);
   };
+
+  const goToNextQuestion = () => {
+    const nextQuestion = currentQuestion + 1;
+    // 次の問題がある場合
+    if (currentQuestion + 1 < quizData.length) {
+      setCurrentQuestion(nextQuestion);
+    } else {
+      //次の問題がない場合
+      setShowScore(true);
+    }
+    setNext(false);
+  };
+
   return (
     <div className="quiz-container">
-      <div className="question-section">
-        <h1>
-          問題 {currentQuestion + 1} / {quizData.length}{" "}
-        </h1>
-        <h2> {quizData[currentQuestion].question} </h2>
-
-        <div className="answer-section">
-          {quizData[currentQuestion].options.map((item, index) => (
-            <button
-              key={index}
-              onClick={() => handleAnswer(item)}
-              className={`quiz-option-button option-${index}`}
-            >
-              {item}
-            </button>
-          ))}
+      {/* 最終スコア表示 */}
+      {showScore ? (
+        <div className="score-section">
+          <h1> スコア </h1>
+          <h2>
+            {score}/{quizData.length}
+          </h2>
         </div>
-      </div>
+      ) : (
+        <div className="question-section">
+          <h1>
+            問題 {currentQuestion + 1} / {quizData.length}{" "}
+          </h1>
+          <h2> {quizData[currentQuestion].question} </h2>
+
+          {next ? (
+            // feedbackに値があれば表示する
+            <div className="feedback-section">
+              <h2 className="large-feedback"> {feedback} </h2>
+              <p> 回答 </p>
+              <p> {quizData[currentQuestion].correct} </p>
+              <button onClick={goToNextQuestion}> 次の問題へ </button>
+            </div>
+          ) : (
+            <div className="answer-section">
+              {quizData[currentQuestion].options.map((item, index) => (
+                <button
+                  key={index}
+                  onClick={() => handleAnswer(item)}
+                  className={`quiz-option-button option-${index}`}
+                >
+                  {item}
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
+      )}
     </div>
   );
 }
