@@ -58,8 +58,8 @@ function App() {
           <table className="answer-table">
             <thead>
               <tr>
-                <td> 質問 </td>
-                <td> あなたの解答 </td>
+                <td> 問題 </td>
+                <td> 解答 </td>
                 <td> 結果 </td>
               </tr>
             </thead>
@@ -76,9 +76,10 @@ function App() {
           {allCorrect ? (
             <button className="shareButton">
               <a
-                href="http://twitter.com/share?url=localhost&text=みんなで一緒に！！「真実はいつもひさじゅ！！！」"
+                href="http://twitter.com/share?url=https://mini-quizapp.onrender.com/&text=みんなで一緒に！！「真実はいつもひさじゅ！！！」"
                 target="_blank"
                 rel="nofollow noopener noreferrer"
+                className="shareLink"
               >
                 Xで共有する
               </a>
@@ -86,20 +87,28 @@ function App() {
           ) : (
             <button className="shareButton">
               <a
-                href="http://twitter.com/share?url=localhost&text=不正解...? RUNTEQの方ではない？？...偽物だぁぁぁ！！！"
+                href="http://twitter.com/share?url=https://mini-quizapp.onrender.com/&text=不正解...? RUNTEQの方ではない？？...偽物だぁぁぁ！！！"
                 target="_blank"
                 rel="nofollow noopener noreferrer"
+                className="shareLink"
               >
                 Xで共有する
               </a>
             </button>
           )}
+          <button className="reloadButton">
+            <a href="https://mini-quizapp.onrender.com/" className="reloadLink">
+              もう一度遊ぶ
+            </a>
+          </button>
         </div>
       ) : (
         <div className="question-section">
-          <h1>
+          <h3> あなたにわかるか？？</h3>
+          <h3> 真実はいつも「ひさじゅ！！」 </h3>
+          <h2>
             問題 {currentQuestion + 1} / {quizData.length}{" "}
-          </h1>
+          </h2>
           <h2> {quizData[currentQuestion].question} </h2>
 
           {next ? (
