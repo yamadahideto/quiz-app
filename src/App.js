@@ -22,7 +22,7 @@ function App() {
     // 正解していた場合
     if (newAnswer.correct) {
       setScore((prevScore) => prevScore + 1);
-      setFeedback("⚪︎");
+      setFeedback("○");
     } else {
       //不正解の場合
       setFeedback("×");
@@ -50,51 +50,43 @@ function App() {
       {/* 最終スコア表示 */}
       {showScore ? (
         <div className="score-section">
-          <h1> スコア </h1>
-          <h2>
+          <h1 className="question_text"> スコア </h1>
+          <h2 className="question_text">
             {score}/{quizData.length}
           </h2>
 
-          <table className="answer-table">
-            <thead>
-              <tr>
-                <td> 問題 </td>
-                <td> 解答 </td>
-                <td> 結果 </td>
-              </tr>
-            </thead>
-            <tbody>
-              {answers.map((item) => (
-                <tr className={item.correct ? "correct" : "wrong"}>
-                  <td> {item.question} </td>
-                  <td> {item.answer} </td>
-                  <td> {item.correct ? "⚪︎" : "×"} </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
           {allCorrect ? (
-            <button className="shareButton">
-              <a
-                href="http://twitter.com/share?url=https://mini-quizapp.onrender.com/&text=全問正解！！みんなで一緒に！！「真実はいつもひさじゅ！！！」"
-                target="_blank"
-                rel="nofollow noopener noreferrer"
-                className="shareLink"
-              >
-                Xで共有する
-              </a>
-            </button>
+            <div>
+              <h1> さすが！！全問正解！！ </h1>
+              <h2> みんなで一緒に！！ </h2>
+              <h2>「真実はいつもひさじゅ！！！」 </h2>
+              <button className="shareButton">
+                <a
+                  href="http://twitter.com/share?url=https://mini-quizapp.onrender.com/&text=全問正解！！みんなで一緒に！！「真実はいつもひさじゅ！！！」"
+                  target="_blank"
+                  rel="nofollow noopener noreferrer"
+                  className="shareLink"
+                >
+                  Xで共有する
+                </a>
+              </button>
+            </div>
           ) : (
-            <button className="shareButton">
-              <a
-                href="http://twitter.com/share?url=https://mini-quizapp.onrender.com/&text=不正解...? RUNTEQの方ではない？？...偽物だぁぁぁ！！！"
-                target="_blank"
-                rel="nofollow noopener noreferrer"
-                className="shareLink"
-              >
-                Xで共有する
-              </a>
-            </button>
+            <div>
+              <h1> 不正解...? </h1>
+              <h2> まさか..RUNTEQの方ではない？？...</h2>
+              <h2> 偽物だぁぁぁ！！！ </h2>
+              <button className="shareButton">
+                <a
+                  href="http://twitter.com/share?url=https://mini-quizapp.onrender.com/&text=不正解...? RUNTEQの方ではない？？...偽物だぁぁぁ！！！"
+                  target="_blank"
+                  rel="nofollow noopener noreferrer"
+                  className="shareLink"
+                >
+                  Xで共有する
+                </a>
+              </button>
+            </div>
           )}
           <button className="reloadButton">
             <a href="https://mini-quizapp.onrender.com/" className="reloadLink">
@@ -104,12 +96,16 @@ function App() {
         </div>
       ) : (
         <div className="question-section">
-          <h3> あなたにわかるか？？</h3>
-          <h3> 真実はいつも「ひさじゅ！！」 </h3>
-          <h2>
-            問題 {currentQuestion + 1} / {quizData.length}{" "}
-          </h2>
-          <h2> {quizData[currentQuestion].question} </h2>
+          <h2> RUNTEQの人ならわかるよね？？</h2>
+          <h2> 真実はいつも「ひさじゅ！！」 </h2>
+          <div>
+            <h2 className="question_text">
+              問題 {currentQuestion + 1} / {quizData.length}{" "}
+            </h2>
+            <h2 className="question_text">
+              {quizData[currentQuestion].question}
+            </h2>
+          </div>
 
           {next ? (
             // feedbackに値があれば表示する
@@ -117,7 +113,7 @@ function App() {
               <h2 className="large-feedback"> {feedback} </h2>
               <p> 回答 </p>
               <p> {quizData[currentQuestion].correct} </p>
-              <button onClick={goToNextQuestion}> 次の問題へ </button>
+              <button onClick={goToNextQuestion}> 次へ </button>
             </div>
           ) : (
             <div className="answer-section">

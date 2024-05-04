@@ -7,13 +7,13 @@
   justify-content: center;
   height: 100vh; /* Viewport Height */
   margin: 0 auto;
+  width: 100%;
 }
 
 .question-section {
   padding: 20px;
   background: white;
   border-radius: 10px;
-  width: 50%;
 }
 
 h1 {
@@ -96,7 +96,6 @@ button {
   color: white;
   border: none;
   border-radius: 4px;
-
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease;
 }
@@ -147,4 +146,8 @@ button {
   color: white;
   background-color: #fc7400;
   text-decoration: none;
+}
+
+.question_text {
+  color: black;
 }
