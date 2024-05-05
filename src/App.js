@@ -62,7 +62,7 @@ function App() {
               <h2>「真実はいつもひさじゅ！！！」 </h2>
               <button className="shareButton">
                 <a
-                  href="http://x.com/intent/post?url=https://mini-quizapp.onrender.com/&hashtags=真実はいつもひさじゅ&text=全問正解！！みんなで一緒に！！「真実はいつもひさじゅ！！！」"
+                  href="http://x.com/intent/tweet?url=https://mini-quizapp.onrender.com/&hashtags=真実はいつもひさじゅ&text=全問正解！！みんなで一緒に！！「真実はいつもひさじゅ！！！」"
                   target="_blank"
                   hashtags="真実はいつもひさじゅ"
                   className="shareLink"
@@ -78,7 +78,7 @@ function App() {
               <h2> 偽物だぁぁぁ！！！ </h2>
               <button className="shareButton">
                 <a
-                  href="http://x.com/intent/post?url=https://mini-quizapp.onrender.com/&hashtags=真実はいつもひさじゅ&text=不正解...? RUNTEQの方ではない？？...偽物だぁぁぁ！！！"
+                  href="http://x.com/intent/tweet?url=https://mini-quizapp.onrender.com/&hashtags=真実はいつもひさじゅ&text=不正解...? RUNTEQの方ではない？？...偽物だぁぁぁ！！！"
                   target="_blank"
                   hashtags="真実はいつもひさじゅ"
                   className="shareLink"
