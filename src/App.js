@@ -155,7 +155,7 @@ const quizData = [
   {
     question:
       "大魔王「ひさじゅ」の極大魔法「ヴィムハラ〜」が発動すると使えなくなるものは？",
-    options: ["かめはめ波", "悪魔の実の能力", "この世の全ての通貨", "VScode"],
+    options: ["かめはめ波", "回復魔法", "この世の全ての通貨", "VScode"],
     correct: "VScode",
   },
   {
@@ -174,7 +174,7 @@ const quizData = [
       "FINAL FANTASY",
       "マインクラフト",
       "ドラゴンクエスト",
-      "ウイニングイレブン",
+      "過激ツイート",
     ],
     correct: "FINAL FANTASY",
   },
