@@ -11,8 +11,10 @@ function App() {
   const [feedback, setFeedback] = useState(null);
   const [showScore, setShowScore] = useState(false);
   const [allCorrect, setAllCollect] = useState(true);
+  const [userAnswer, setUserAnswer] = useState(null);
 
   const handleAnswer = (answer) => {
+    setUserAnswer(answer);
     const newAnswer = {
       question: quizData[currentQuestion].question,
       answer: answer,
@@ -111,8 +113,8 @@ function App() {
             // feedbackに値があれば表示する
             <div className="feedback-section">
               <h2 className="large-feedback"> {feedback} </h2>
-              <p> 回答 </p>
-              <p> {quizData[currentQuestion].correct} </p>
+              <p> あなたの回答 </p>
+              <p> {userAnswer} </p>
               <button onClick={goToNextQuestion}> 次へ </button>
             </div>
           ) : (
